@@ -11,6 +11,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { LoginComponent } from './profil/login/login.component';
+import { CardComponent } from './home/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './profil/login/login.component';
     FooterComponent,
     AdminComponent,
     RechercheComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
