@@ -29,9 +29,14 @@ const routes: Routes = [
   },
   // 404
   {
-    path: '**',
+    path: '404',
     component: ErrorComponent,
   },
+  {
+    path: '**',
+    redirectTo: '404',
+  },
+
   // {
   //   path: 'search/:id',
   //   component: RechercheComponent,
