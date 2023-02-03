@@ -12,6 +12,10 @@ const routes: Routes = [
     component: QuizzComponent,
   },
   {
+    path: 'quiz/:id/question/:idQuestion',
+    component: QuizzComponent,
+  },
+  {
     path: 'profil/:id',
     component: ProfilComponent,
   },

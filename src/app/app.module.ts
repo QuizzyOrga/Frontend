@@ -15,6 +15,8 @@ import { CardComponent } from './home/card/card.component';
 import { ErrorComponent } from './error/error.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,12 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IvyCarouselModule
+    ReactiveFormsModule,
+    FormsModule,
+    IvyCarouselModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpClient],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
