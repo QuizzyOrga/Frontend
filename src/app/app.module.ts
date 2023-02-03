@@ -10,13 +10,15 @@ import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 import { RechercheComponent } from './recherche/recherche.component';
-import { LoginComponent } from './profil/login/login.component';
 import { CardComponent } from './home/card/card.component';
 import { ErrorComponent } from './error/error.component';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { LoginComponent } from './connexion/login/login.component';
+import { RegisterComponent } from './connexion/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FooterComponent,
     AdminComponent,
     RechercheComponent,
-    LoginComponent,
     CardComponent,
     ErrorComponent,
+    ConnexionComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

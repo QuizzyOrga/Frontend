@@ -1,0 +1,8 @@
+.h-10 {
+    height: 4.5rem;
+}
+
+.space-y-12 > :not([hidden]) ~ :not([hidden]) {
+    display: flex;
+    justify-content: center;
+}
