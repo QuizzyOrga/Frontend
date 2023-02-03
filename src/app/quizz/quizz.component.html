@@ -1,1 +1,49 @@
-<p>quizz works!</p>
+<div class="w-full max-w-sm mx-auto">
+    <h1 class="text-2xl font-bold mb-10">Quiz : Le méchant de Disney </h1>
+
+    <h2 class="text-2xl font-bold mb-6">Qui est le plus bo ? </h2>
+    <form>
+        <div class="mb-4">
+
+
+            <label class="block text-gray-700 font-bold mb-2">
+                Choisissez une réponse :
+            </label>
+
+            <ul class="grid w-full gap-1 md:grid-cols-1">
+                <li>
+                    <input type="radio" id="rep1" name="reponse" value="rep1" class="hidden peer" required>
+                    <label for="rep1"
+                        class="inline-flex items-center justify-between w-full p-5 text-black-500 bg-white border border-black-200 rounded-lg cursor-pointer dark:hover:text-black-300 dark:border-black-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-black-600 hover:bg-black-100 dark:text-black-400 dark:bg-black-800 dark:hover:bg-black-700">
+                        <div class="block">
+                            <div class="w-full text-lg font-semibold">
+                                Batman c'est lui mashallah
+                            </div>
+                            <!-- <div class="w-full">Good for small websites</div> -->
+                        </div>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="rep2" name="reponse" value="rep2" class="hidden peer" required>
+                    <label for="rep2"
+                        class="inline-flex items-center justify-between w-full p-5 text-black-500 bg-white border border-black-200 rounded-lg cursor-pointer dark:hover:text-black-300 dark:border-black-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-black-600 hover:bg-black-100 dark:text-black-400 dark:bg-black-800 dark:hover:bg-black-700">
+                        <div class="block">
+                            <div class="w-full text-lg font-semibold">
+                                Le grand mechan loup
+                            </div>
+                            <!-- <div class="w-full">Good for small websites</div> -->
+                        </div>
+                    </label>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <button type="submit"
+            class="inline-block bg-gradient-to-br from-purple-300 to-purple-400 py-4 px-12 rounded-full text-lg text-purple-100 uppercase tracking-wide shadow-xs hover:shadow-2xl active:shadow-xl transform hover:-translate-y-1 active:translate-y-0 transition duration-200 ">
+            Vérifier la réponse
+        </button>
+
+    </form>
+</div>
