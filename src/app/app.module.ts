@@ -12,6 +12,9 @@ import { AdminComponent } from './admin/admin.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { LoginComponent } from './profil/login/login.component';
 import { CardComponent } from './home/card/card.component';
+import { ErrorComponent } from './error/error.component';
+
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,13 @@ import { CardComponent } from './home/card/card.component';
     AdminComponent,
     RechercheComponent,
     LoginComponent,
-    CardComponent
+    CardComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
