@@ -20,6 +20,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { LoginComponent } from './connexion/login/login.component';
 import { RegisterComponent } from './connexion/register/register.component';
 
+import { ChangeBgDirective } from './change-bg.directive';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,7 @@ import { RegisterComponent } from './connexion/register/register.component';
     ConnexionComponent,
     LoginComponent,
     RegisterComponent,
+    ChangeBgDirective
   ],
   imports: [
     BrowserModule,

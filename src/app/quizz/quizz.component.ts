@@ -1,55 +1,105 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { QuizService } from './quiz.service';
+import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
-  styleUrls: ['./quizz.component.scss'],
+  styleUrls: ['./quizz.component.scss']
 })
-export class QuizzComponent {
-  formData: FormGroup = new FormGroup({});
-  subscription: Subscription | undefined;
-  idQuiz: number = 1;
-  idQuestion: number = 1;
+export class QuizzComponent implements OnInit {
 
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private quizService: QuizService
-  ) {}
+  public name: string = "";
+  public questionList: any = [];
+  public currentQuestion: number = 0;
+  public points: number = 0;
+  counter = 60;
+  correctAnswer: number = 0;
+  inCorrectAnswer: number = 0;
+  interval$: any;
+  progress: string = "0";
+  isQuizCompleted : boolean = false;
+  constructor(private questionService: QuestionService) { }
 
-  ngOnInit() {
-    this.formData = this.fb.group({
-      reponse: ['', Validators.required],
-    });
-
-    this.subscription = this.route.params.subscribe((params) => {
-      this.idQuiz = Number(params['id']);
-      this.idQuestion = Number(params['idQuestion']) | 1;
-      if (this.idQuiz) {
-        this.quizService
-          .getQuestion(this.idQuiz, this.idQuestion)
-          .subscribe((data) => {
-            console.log(
-              '🚀 ~ QuizzComponent ~ this.quizService.getById ~ data',
-              data
-            );
-          });
-      }
-    });
+  ngOnInit(): void {
+    this.name = localStorage.getItem("name")!;
+    this.getAllQuestions();
+    this.startCounter();
   }
+  getAllQuestions() {
+    this.questionService.getQuestionJson()
+      .subscribe(res => {
+        this.questionList = res.questions;
+      })
+  }
+  nextQuestion() {
+    this.currentQuestion++;
+  }
+  previousQuestion() {
+    this.currentQuestion--;
+  }
+  answer(currentQno: number, option: any) {
 
-  onSubmit() {
-    console.log(this.formData.value);
+    if(currentQno === this.questionList.length){
+      this.isQuizCompleted = true;
+      this.stopCounter();
+    }
+    if (option.correct) {
+      this.points += 10;
+      this.correctAnswer++;
+      setTimeout(() => {
+        this.currentQuestion++;
+        this.resetCounter();
+        this.getProgressPercent();
+      }, 1000);
 
-    const reponse = this.formData.value.reponse;
+
+    } else {
+      setTimeout(() => {
+        this.currentQuestion++;
+        this.inCorrectAnswer++;
+        this.resetCounter();
+        this.getProgressPercent();
+      }, 1000);
+
+      this.points -= 10;
+    }
+  }
+  startCounter() {
+    this.interval$ = interval(1000)
+      .subscribe(val => {
+        this.counter--;
+        if (this.counter === 0) {
+          this.currentQuestion++;
+          this.counter = 60;
+          this.points -= 10;
+        }
+      });
+    setTimeout(() => {
+      this.interval$.unsubscribe();
+    }, 600000);
+  }
+  stopCounter() {
+    this.interval$.unsubscribe();
+    this.counter = 0;
+  }
+  resetCounter() {
+    this.stopCounter();
+    this.counter = 60;
+    this.startCounter();
+  }
+  resetQuiz() {
+    this.resetCounter();
+    this.getAllQuestions();
+    this.points = 0;
+    this.counter = 60;
+    this.currentQuestion = 0;
+    this.progress = "0";
+
+  }
+  getProgressPercent() {
+    this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    return this.progress;
+
   }
 }
