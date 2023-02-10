@@ -20,6 +20,10 @@ import { LoginComponent } from './connexion/login/login.component';
 import { RegisterComponent } from './connexion/register/register.component';
 
 import { ChangeBgDirective } from './change-bg.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -45,6 +49,9 @@ import { ChangeBgDirective } from './change-bg.directive';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent],
