@@ -1,56 +1,16 @@
-<div class="grid grid-cols-4 gap-4 m-5">
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
+<div *ngIf="quizs" class="grid grid-cols-4 gap-4 m-5">
+
+
+  <div class="max-w-xs rounded overflow-hidden shadow-lg" *ngFor="let quiz of quizs">
+    <img class="w-full" [src]="quiz.urlImg" width="100px" height="100px" alt="image du quiz">
     <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 1</div>
+      <div class="font-bold text-lg mb-2">
+        <a [routerLink]="['/quiz', quiz.id]">{{quiz.title}}</a>
+      </div>
       <p class="text-gray-700">
-        Description de la carte 1.
+        {{quiz.description}}
       </p>
     </div>
   </div>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 2</div>
-      <p class="text-gray-700">
-        Description de la carte 2.
-      </p>
-    </div>
-  </div>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 3</div>
-      <p class="text-gray-700">
-        Description de la carte 3.
-      </p>
-    </div>
-  </div>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 4</div>
-      <p class="text-gray-700">
-        Description de la carte 4.
-      </p>
-    </div>
-  </div>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 5</div>
-      <p class="text-gray-700">
-        Description de la carte 5.
-      </p>
-    </div>
-  </div>
-  <div class="max-w-xs rounded overflow-hidden shadow-lg">
-    <img class="w-full" src="https://via.placeholder.com/300x200" alt="Placeholder image">
-    <div class="px-6 py-4">
-      <div class="font-bold text-lg mb-2">Titre de la carte 6</div>
-      <p class="text-gray-700">
-        Description de la carte 6.
-      </p>
-    </div>
-  </div>
+
 </div>
