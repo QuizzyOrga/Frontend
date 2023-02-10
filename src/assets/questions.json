@@ -3,7 +3,7 @@
             "questionText": "Which of the following does TypeScript use to specify types?",
             "options": [{
                     "text": ":",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": ";"
@@ -30,7 +30,7 @@
                 },
                 {
                     "text": "enum",
-                    "correct": true
+                    "isCorrect": true
                 }
             ],
             "explanation": "enum is not used as a type in TypeScript"
@@ -42,7 +42,7 @@
                 },
                 {
                     "text": "Use interfaces.",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "Use enums."
@@ -60,7 +60,7 @@
                 },
                 {
                     "text": "number[]",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "number!"
@@ -75,7 +75,7 @@
             "questionText": "In which of these does a class take parameters?",
             "options": [{
                     "text": "constructor",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "destructor"
@@ -102,7 +102,7 @@
                 },
                 {
                     "text": "async",
-                    "correct": true
+                    "isCorrect": true
                 }
             ],
             "explanation": "async is not used as an access modifier type in TypeScript"
@@ -114,7 +114,7 @@
                 },
                 {
                     "text": "export",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "async"
@@ -129,7 +129,7 @@
             "questionText": "Which is an array method to generate a new array based on a condition?",
             "options": [{
                     "text": "filter",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "map"
@@ -147,7 +147,7 @@
             "questionText": "How is a property accessible within a class?",
             "options": [{
                     "text": "Using this.propertyName",
-                    "correct": true
+                    "isCorrect": true
                 },
                 {
                     "text": "Accessors"
