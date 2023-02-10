@@ -13,7 +13,6 @@ import { RechercheComponent } from './recherche/recherche.component';
 import { CardComponent } from './home/card/card.component';
 import { ErrorComponent } from './error/error.component';
 
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -45,7 +44,6 @@ import { ChangeBgDirective } from './change-bg.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    IvyCarouselModule,
     HttpClientModule,
   ],
   providers: [HttpClient],
