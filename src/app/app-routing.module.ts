@@ -18,7 +18,7 @@ const routes: Routes = [
     component: QuizzComponent,
   },
   {
-    path: 'profil/:id',
+    path: 'profil',
     component: ProfilComponent,
   },
   {
