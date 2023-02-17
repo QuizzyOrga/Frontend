@@ -80,7 +80,7 @@ export class QuizzComponent implements OnInit {
         this.getProgressPercent();
       }, 1000);
 
-      this.points -= 10;
+      // this.points -= 10;
     }
   }
   startCounter() {
@@ -89,7 +89,7 @@ export class QuizzComponent implements OnInit {
       if (this.counter === 0) {
         this.currentQuestion++;
         this.counter = 60;
-        this.points -= 10;
+        // this.points -= 10;
       }
     });
     setTimeout(() => {
