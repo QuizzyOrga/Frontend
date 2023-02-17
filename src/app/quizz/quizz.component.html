@@ -7,7 +7,7 @@
                     <h5>{{points}} Points</h5>
                 </div>
                 <div class="question-remain">
-                    <span style="font-style: italic;">Question {{currentQuestion+1}} of {{questionList.length}}</span>
+                    <span style="font-style: italic;">Question {{currentQuestion+1}} sur {{questionList.length}}</span>
                 </div>
                 <div class="timer">
                     <h5>{{counter}} sec ⏱</h5>
@@ -19,7 +19,7 @@
             </div>
             <div class="question">
                 <div class="card">
-                    <h3>{{questionList[currentQuestion]?.questionText}}</h3>
+                    <p class="text-2xl ">{{questionList[currentQuestion]?.questionText}}</p>
                 </div>
             </div>
             <div class="options">
@@ -45,11 +45,11 @@
         <ng-container *ngIf="isQuizCompleted">
             <div class="row d-flex justify-content-between">
                 <div class="result text-center col-md-6 col-sm-12">
-                    <h3>Congratulations!! <br>You have completed the quiz. <br>Below is your result:</h3>
-                    <p>Total Question Attempted : {{questionList.length}} </p>
-                    <p>Total Correct Answered : {{correctAnswer}} </p>
-                    <p>Total Wrong Answered : {{inCorrectAnswer}} </p>
-                    <p>Your Score : {{points}} Points </p>
+                    <h3>Félicitations ! <br>Vous avez terminé le quiz. <br>Voici votre résultat :</h3>
+                    <p>Total des questions tentées : {{questionList.length}} </p>
+                    <p>Total des réponses correctes : {{correctAnswer}} </p>
+                    <p>Total des réponses erronées : {{inCorrectAnswer}} </p>
+                    <p>Votre Score : {{points}} Points </p>
                 </div>
             </div>
         </ng-container>
