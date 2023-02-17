@@ -14,25 +14,21 @@
     <!-- end logo -->
 
     <!-- search bar -->
-    <form (ngSubmit)="onSubmit()">
-        <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
-            <div class="inline-block">
-                <div class="inline-flex items-center max-w-full">
-                    <div class="block flex-grow flex-shrink overflow-hidden">
-                        <input type="text" id="default-search"
-                            class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1"
-                            placeholder="Rechercher un quiz ..." required name="search" [(ngModel)]="searchTerm">
-                    </div>
-                    <button class="search-icon">
-                        <mat-icon mat-icon-button>search</mat-icon>
-                    </button>
+    <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
+        <div class="inline-block">
+            <div class="inline-flex items-center max-w-full">
+                <div class="block flex-grow flex-shrink overflow-hidden">
+                    <input type="text" id="default-search"
+                        class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1"
+                        placeholder="Rechercher un quiz ..." required name="search" [(ngModel)]="searchTerm"
+                        (ngModelChange)="search()">
                 </div>
+                <button class="search-icon">
+                    <mat-icon mat-icon-button>search</mat-icon>
+                </button>
             </div>
         </div>
-    </form>
-    <ul *ngIf="searchResults">
-        <li *ngFor="let result of searchResults">{{ result.title }}</li>
-    </ul>
+    </div>
     <!-- end search bar -->
 
     <!-- login -->

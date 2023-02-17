@@ -1,11 +1,12 @@
-<div *ngIf="searchQuizResults">
+<div *ngIf="searchQuizResults && searchQuizResults !== ''">
 
   <h1>RECHERCHE</h1>
-  <div *ngIf="searchQuizResults" class="grid grid-cols-4 gap-4 m-5">
 
-    <div *ngIf="searchQuizResults.length === 0">
-      <h1>Aucun résultat</h1>
-    </div>
+  <div *ngIf="searchQuizResults.length === 0">
+    <p class="text-3xl font-bold text-center">Aucun résultat</p>
+  </div>
+
+  <div *ngIf="searchQuizResults" class="grid grid-cols-4 gap-4 m-5">
 
     <div class="max-w-xs rounded overflow-hidden shadow-lg" *ngFor="let quiz of searchQuizResults">
       <img *ngIf="!quiz.urlImg" src="../../../assets/quizzy_logo.png" alt="Default Image" width="auto" height="auto">
