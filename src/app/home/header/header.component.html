@@ -19,7 +19,9 @@
             <div class="inline-block">
                 <div class="inline-flex items-center max-w-full">
                     <div class="block flex-grow flex-shrink overflow-hidden">
-                        <input type="text" id="default-search" class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1" placeholder="Rechercher un quiz ..." required name="search" [(ngModel)]="searchTerm">
+                        <input type="text" id="default-search"
+                            class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1"
+                            placeholder="Rechercher un quiz ..." required name="search" [(ngModel)]="searchTerm">
                     </div>
                     <button class="search-icon">
                         <mat-icon mat-icon-button>search</mat-icon>
@@ -36,17 +38,23 @@
     <!-- login -->
     <div class="flex-initial">
         <div class="flex justify-end items-center relative">
-
+            <div class="flex mr-4 items-center">
+                <div class="block relative" routerLink="quiz/create" routerLinkActive="active"
+                    ariaCurrentWhenActive="page">
+                    <button type="button" class="add_to_queue inline-block rounded-full relative ">
+                        <mat-icon class="add_to_queue">add_to_queue</mat-icon>
+                    </button>
+                </div>
+            </div>
             <div class="flex mr-4 items-center">
                 <div class="block relative" routerLink="profil" routerLinkActive="active" ariaCurrentWhenActive="page">
                     <button type="button" class="people-logo inline-block rounded-full relative ">
                         <mat-icon class="people-logo">account_circle</mat-icon>
                     </button>
-                  </div>
+                </div>
             </div>
-
-            
         </div>
+
     </div>
     <!-- end login -->
 </nav>

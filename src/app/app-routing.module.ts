@@ -7,14 +7,15 @@ import { LoginComponent } from './connexion/login/login.component';
 import { RegisterComponent } from './connexion/register/register.component';
 import { ProfilComponent } from './profil/profil.component';
 import { QuizzComponent } from './quizz/quizz.component';
+import { CreateQuizzComponent } from './create/create.component';
 
 const routes: Routes = [
   {
-    path: 'quiz/:id',
-    component: QuizzComponent,
+    path: 'quiz/create',
+    component: CreateQuizzComponent,
   },
   {
-    path: 'quiz/:id/question/:idQuestion',
+    path: 'quiz/:id',
     component: QuizzComponent,
   },
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
-  
+
   {
     path: 'login',
     component: LoginComponent,
@@ -48,7 +49,6 @@ const routes: Routes = [
     path: '**',
     redirectTo: '404',
   },
-
 
   // {
   //   path: 'search/:id',

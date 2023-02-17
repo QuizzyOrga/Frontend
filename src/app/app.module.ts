@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { NgFireworksModule } from '@fireworks-js/angular';
+import { CreateQuizzComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NgFireworksModule } from '@fireworks-js/angular';
     LoginComponent,
     RegisterComponent,
     ChangeBgDirective,
+    CreateQuizzComponent,
   ],
   imports: [
     BrowserModule,
