@@ -18,6 +18,7 @@ export class QuizzComponent implements OnInit {
   public currentQuestion: number = 0;
   public points: number = 0;
   idQuiz: number = 1;
+  codeQuiz: string = '';
   counter = 60;
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
@@ -35,12 +36,20 @@ export class QuizzComponent implements OnInit {
     this.getAllQuestions();
     this.startCounter();
   }
+
   getAllQuestions() {
     this.subscription = this.route.params.subscribe((params: any) => {
-      this.idQuiz = Number(params['id']);
-      this.quizService.getQuiz(this.idQuiz).subscribe((res) => {
-        this.questionList = res.questions;
-      });
+      if (this.isNumeric(params['id'])) {
+        this.idQuiz = Number(params['id']);
+        this.quizService.getQuiz(this.idQuiz).subscribe((res) => {
+          this.questionList = res.questions;
+        });
+      } else {
+        this.codeQuiz = params['id'];
+        this.quizService.getQuiz(this.codeQuiz).subscribe((res) => {
+          this.questionList = res.questions;
+        });
+      }
     });
   }
 
@@ -126,4 +135,8 @@ export class QuizzComponent implements OnInit {
   public waitStop(): void {
     this.fireworks?.waitStop();
   }
+
+  isNumeric = (val: string): boolean => {
+    return !isNaN(Number(val));
+  };
 }
