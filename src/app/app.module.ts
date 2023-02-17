@@ -24,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-
+import { NgFireworksModule } from '@fireworks-js/angular';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
     ConnexionComponent,
     LoginComponent,
     RegisterComponent,
-    ChangeBgDirective
+    ChangeBgDirective,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +51,8 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    NgFireworksModule,
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent],

@@ -64,5 +64,7 @@
             </div>
         </ng-container>
 
+        <ng-fireworks #fireworks="ngFireworks" [options]="options" class="fireworks"
+            *ngIf="isQuizCompleted && points>10"></ng-fireworks>
     </div>
 </div>
