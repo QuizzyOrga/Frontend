@@ -43,16 +43,16 @@
         </ng-container>
 
         <ng-container *ngIf="isQuizCompleted">
-            <div class="row d-flex justify-content-between">
-                <div class="result text-center col-md-6 col-sm-12">
-                    <p class="text-2xl">🎉🎉🎉 Félicitations ! 🎉🎉🎉
+            <div>
+                <div class="result text-center ">
+                    <p class="text-2xl  text-center">🎉🎉🎉 Félicitations ! 🎉🎉🎉
                         <br>Vous avez terminé le quiz.
                         <br>Voici votre résultat :
                     </p>
                     <p>Total des questions tentées : {{questionList.length}} </p>
                     <p>Total des réponses correctes : {{correctAnswer}} </p>
                     <p>Total des réponses erronées : {{inCorrectAnswer}} </p>
-                    <p>Votre Score : {{points}} Points </p>
+                    <p>Votre Score : {{points < 0 ? 0 : points }} Points </p>
                 </div>
             </div>
         </ng-container>
