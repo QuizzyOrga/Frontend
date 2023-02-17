@@ -4,7 +4,10 @@
 
 
   <div class="max-w-xs rounded overflow-hidden shadow-lg" *ngFor="let quiz of quizs">
-    <img class="w-full" [src]="quiz.urlImg" width="auto" height="auto" alt="image du quiz">
+    <img *ngIf="!quiz.urlImg" src="../../../assets/quizzy_logo.png" alt="Default Image" width="auto" height="auto">
+    <img *ngIf="quiz.urlImg" [src]="quiz.urlImg" alt="Image" width="auto" height="auto">
+  
+
     <div class="px-6 py-4">
       <div class="font-bold text-lg mb-2">
         <a [routerLink]="['/quiz', quiz.id]">{{quiz.title}}</a>
@@ -13,6 +16,7 @@
         {{quiz.description}}
       </p>
     </div>
+   
   </div>
 
 </div>
