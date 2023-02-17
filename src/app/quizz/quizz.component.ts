@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 import { QuizService } from '../services/quiz.service';
+import type {
+  FireworksDirective,
+  FireworksOptions,
+} from '@fireworks-js/angular';
 
 @Component({
   selector: 'app-quizz',
@@ -106,5 +110,20 @@ export class QuizzComponent implements OnInit {
       100
     ).toString();
     return this.progress;
+  }
+
+  enabled = true;
+  options: FireworksOptions = {
+    opacity: 0.5,
+  };
+
+  @ViewChild('fireworks') fireworks?: FireworksDirective;
+
+  public toggleFireworks(): void {
+    this.enabled = !this.enabled;
+  }
+
+  public waitStop(): void {
+    this.fireworks?.waitStop();
   }
 }
