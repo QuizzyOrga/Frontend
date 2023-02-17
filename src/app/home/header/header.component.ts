@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-header',
@@ -7,23 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  searchTerm: string = "";
+  searchTerm: string = '';
   searchResults: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private dataService: DataService) {}
 
   onSubmit() {
-    this.http.get<{results: any[]}>(`http://localhost:3000/recherche?term=${this.searchTerm}`)
+    this.http
+      .get<{ results: any[] }>(
+        `http://localhost:3000/recherche?term=${this.searchTerm}`
+      )
       .subscribe((response) => {
         this.searchResults = response;
-        console.log(response)
+        this.dataService.setData(this.searchResults);
       });
-    }
+  }
   opened = false;
 
-  log(state:any) {
-    console.log(state)
+  log(state: any) {
+    console.log(state);
   }
-
-  
 }

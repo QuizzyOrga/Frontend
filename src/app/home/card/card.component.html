@@ -1,5 +1,40 @@
-<h1>Nos quizz en vedette</h1>
+<div *ngIf="searchQuizResults">
 
+  <h1>RECHERCHE</h1>
+  <div *ngIf="searchQuizResults" class="grid grid-cols-4 gap-4 m-5">
+
+    <div *ngIf="searchQuizResults.length === 0">
+      <h1>Aucun résultat</h1>
+    </div>
+
+    <div class="max-w-xs rounded overflow-hidden shadow-lg" *ngFor="let quiz of searchQuizResults">
+      <img *ngIf="!quiz.urlImg" src="../../../assets/quizzy_logo.png" alt="Default Image" width="auto" height="auto">
+      <img *ngIf="quiz.urlImg" [src]="quiz.urlImg" alt="Image" width="auto" height="auto">
+
+
+      <div class="px-6 py-4">
+        <div class="font-bold text-lg mb-2">
+          <a [routerLink]="['/quiz', quiz.id]">{{quiz.title}}</a>
+        </div>
+        <p class="text-gray-700">
+          {{quiz.description}}
+          <br>
+          Créer par
+          <a [routerLink]="['/profil', quiz.creator.id]">@{{quiz.creator.firstName + '_' + quiz.creator.lastName}}</a>
+          : {{quiz.createdAt | date: 'dd/MM/yyyy'}}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<h1>Nos quizz en vedette</h1>
 
 
 <div *ngIf="quizs" class="grid grid-cols-4 gap-4 m-5">
@@ -27,7 +62,7 @@
   <div class="max-w-xs rounded overflow-hidden shadow-lg" *ngFor="let quiz of quizs">
     <img *ngIf="!quiz.urlImg" src="../../../assets/quizzy_logo.png" alt="Default Image" width="auto" height="auto">
     <img *ngIf="quiz.urlImg" [src]="quiz.urlImg" alt="Image" width="auto" height="auto">
-  
+
 
     <div class="px-6 py-4">
       <div class="font-bold text-lg mb-2">
@@ -41,7 +76,7 @@
         : {{quiz.createdAt | date: 'dd/MM/yyyy'}}
       </p>
     </div>
-   
+
   </div>
 
 </div>
