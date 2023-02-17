@@ -18,8 +18,8 @@ export class QuizService {
     );
   }
 
-  getQuiz(idQuiz: number): Observable<any> {
-    return this.http.get(this.urlApi + 'quiz/' + Number(idQuiz)).pipe(
+  getQuiz(idQuiz: any): Observable<any> {
+    return this.http.get(this.urlApi + 'quiz/' + idQuiz).pipe(
       map((resp: any) => resp),
       share(),
       take(1)
