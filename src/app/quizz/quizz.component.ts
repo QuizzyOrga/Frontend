@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { interval, Subscription } from 'rxjs';
 import { QuizService } from '../services/quiz.service';
 
 @Component({
@@ -12,13 +13,18 @@ export class QuizzComponent implements OnInit {
   public questionList: any = [];
   public currentQuestion: number = 0;
   public points: number = 0;
+  idQuiz: number = 1;
   counter = 60;
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
   interval$: any;
   progress: string = '0';
   isQuizCompleted: boolean = false;
-  constructor(private quizService: QuizService) {}
+  subscription: Subscription | undefined;
+  constructor(
+    private quizService: QuizService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.name = localStorage.getItem('name')!;
@@ -26,8 +32,11 @@ export class QuizzComponent implements OnInit {
     this.startCounter();
   }
   getAllQuestions() {
-    this.quizService.getQuiz(1).subscribe((res) => {
-      this.questionList = res.questions;
+    this.subscription = this.route.params.subscribe((params: any) => {
+      this.idQuiz = Number(params['id']);
+      this.quizService.getQuiz(this.idQuiz).subscribe((res) => {
+        this.questionList = res.questions;
+      });
     });
   }
 
