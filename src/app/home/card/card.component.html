@@ -32,6 +32,10 @@
       </div>
       <p class="text-gray-700">
         {{quiz.description}}
+        <br>
+        Créer par
+        <a [routerLink]="['/profil', quiz.creator.id]">@{{quiz.creator.firstName + '_' + quiz.creator.lastName}}</a>
+        : {{quiz.createdAt | date: 'dd/MM/yyyy'}}
       </p>
     </div>
   </div>
