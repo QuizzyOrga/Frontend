@@ -8,6 +8,7 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+  codePrivate: string = '';
   constructor(private quizService: QuizService) {}
 
   quizs: Quiz[] | undefined;
