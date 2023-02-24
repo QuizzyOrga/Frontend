@@ -22,6 +22,7 @@ export class QuizzComponent implements OnInit {
   counter = 60;
   correctAnswer: number = 0;
   inCorrectAnswer: number = 0;
+  afficherRep: boolean = false;
   interval$: any;
   progress: string = '0';
   isQuizCompleted: boolean = false;
@@ -67,23 +68,26 @@ export class QuizzComponent implements OnInit {
     if (option.isCorrect) {
       this.points += 10;
       this.correctAnswer++;
+      this.afficherRep = true;
       setTimeout(() => {
         this.currentQuestion++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 7000);
     } else {
+      this.afficherRep = true;
       setTimeout(() => {
         this.currentQuestion++;
         this.inCorrectAnswer++;
         this.resetCounter();
         this.getProgressPercent();
-      }, 1000);
+      }, 8000);
 
       // this.points -= 10;
     }
   }
   startCounter() {
+    this.afficherRep = false;
     this.interval$ = interval(1000).subscribe((val) => {
       this.counter--;
       if (this.counter === 0) {
