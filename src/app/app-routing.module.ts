@@ -30,7 +30,14 @@ const routes: Routes = [
     path: 'connexion',
     component: ConnexionComponent,
   },
-
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    path: 'accueil',
+    component: HomeComponent,
+  },
   {
     path: 'register',
     component: RegisterComponent,
