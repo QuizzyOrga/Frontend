@@ -1,9 +1,9 @@
 # Frontend Quizzy
 
-[![Git](https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white)](https://git-scm.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white)](https://git-scm.com/)
 [![Angular](https://img.shields.io/badge/Angular-DD0031.svg?style=for-the-badge&logo=Angular&logoColor=white)](https://angular.io/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC.svg?style=for-the-badge&logo=TailwindCSS&logoColor=white)](https://tailwindcss.com/)
+[![ESLINT](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
+[![PRETTIER](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
@@ -71,4 +71,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Plugins conseillés
 
 Eslint : Linter
+
 Prettier : Code formater
