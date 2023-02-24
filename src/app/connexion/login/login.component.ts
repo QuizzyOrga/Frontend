@@ -24,7 +24,7 @@ export class LoginComponent {
     this.userService.login(this.email, this.password).subscribe(
       (data) => {
         console.log(data);
-        this.router.navigate(['/']);
+        this.router.navigate(['/profil', data['id']]);
       },
       (error) => {
         console.log(error);
