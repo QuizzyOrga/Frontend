@@ -25,4 +25,14 @@ export class UserService {
       take(1)
     );
   }
+
+  login(email: string, password: string): Observable<any> {
+    return this.http
+      .post(this.urlApi + 'users/login', { email, password })
+      .pipe(
+        map((resp: any) => resp),
+        share(),
+        take(1)
+      );
+  }
 }
