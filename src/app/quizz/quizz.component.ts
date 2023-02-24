@@ -14,6 +14,7 @@ import type {
 export class QuizzComponent implements OnInit {
   public name: string = '';
   public questionList: any = [];
+  public quiz: any = {};
   public currentQuestion: number = 0;
   public points: number = 0;
   idQuiz: number = 1;
@@ -42,12 +43,14 @@ export class QuizzComponent implements OnInit {
       if (this.isNumeric(params['id'])) {
         this.idQuiz = Number(params['id']);
         this.quizService.getQuiz(this.idQuiz).subscribe((res) => {
+          this.quiz = res;
           this.questionList = res.questions;
         });
       } else {
         this.codeQuiz = params['id'];
         this.quizService.getQuiz(this.codeQuiz).subscribe((res) => {
           this.questionList = res.questions;
+          this.quiz = res;
         });
       }
     });
