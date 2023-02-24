@@ -23,6 +23,10 @@ const routes: Routes = [
     component: ProfilComponent,
   },
   {
+    path: 'profil/:id',
+    component: ProfilComponent,
+  },
+  {
     path: 'connexion',
     component: ConnexionComponent,
   },

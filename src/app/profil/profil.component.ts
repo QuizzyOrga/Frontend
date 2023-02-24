@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-profil',
@@ -6,11 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./profil.component.scss'],
 })
 export class ProfilComponent {
-  profile: any;
+  user: any;
+  idUser: number = 1;
+  subscription: Subscription | undefined;
 
-  constructor() {}
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.profile = '';
+    this.subscription = this.route.params.subscribe((params: any) => {
+      this.idUser = Number(params['id']) || 1;
+    });
+    this.userService.getUser(this.idUser).subscribe((res) => {
+      this.user = res;
+    });
   }
 }
