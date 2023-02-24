@@ -14,7 +14,7 @@
     <!-- end logo -->
 
     <!-- search bar -->
-    <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
+    <div [hidden]="hideSearchBar" class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
         <div class="inline-block">
             <div class="inline-flex items-center max-w-full">
                 <div class="block flex-grow flex-shrink overflow-hidden">
@@ -35,7 +35,7 @@
     <div class="flex-initial">
         <div class="flex justify-end items-center relative">
             <div class="flex mr-4 items-center">
-                <div class="block relative" routerLink="quiz/create" routerLinkActive="active"
+                <div class="block relative" routerLink="/quiz/create" routerLinkActive="active"
                     ariaCurrentWhenActive="page">
                     <button type="button" class="add_to_queue inline-block rounded-full relative ">
                         <mat-icon class="add_to_queue">add_to_queue</mat-icon>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="flex mr-4 items-center">
-                <div class="block relative" routerLink="profil" routerLinkActive="active" ariaCurrentWhenActive="page">
+                <div class="block relative" routerLink="/profil" routerLinkActive="active" ariaCurrentWhenActive="page">
                     <button type="button" class="people-logo inline-block rounded-full relative ">
                         <mat-icon class="people-logo">account_circle</mat-icon>
                     </button>

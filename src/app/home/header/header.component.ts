@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DataService } from '../../services/data.service';
 export class HeaderComponent {
   searchTerm: string = '';
   searchResults: any;
-
+  @Input() hideSearchBar: boolean = false;
   constructor(private http: HttpClient, private dataService: DataService) {}
 
   opened = false;

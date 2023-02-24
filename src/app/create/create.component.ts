@@ -1,11 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { interval, Subscription } from 'rxjs';
 import { QuizService } from '../services/quiz.service';
-import type {
-  FireworksDirective,
-  FireworksOptions,
-} from '@fireworks-js/angular';
 
 @Component({
   selector: 'app-create-quizz',
