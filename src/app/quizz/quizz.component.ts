@@ -6,7 +6,6 @@ import type {
   FireworksDirective,
   FireworksOptions,
 } from '@fireworks-js/angular';
-
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
@@ -69,10 +68,12 @@ export class QuizzComponent implements OnInit {
       this.points += 10;
       this.correctAnswer++;
       this.afficherRep = true;
+      this.enabled = true;
       setTimeout(() => {
         this.currentQuestion++;
         this.resetCounter();
         this.getProgressPercent();
+        this.enabled = false;
       }, 7000);
     } else {
       this.afficherRep = true;
@@ -86,6 +87,7 @@ export class QuizzComponent implements OnInit {
       // this.points -= 10;
     }
   }
+
   startCounter() {
     this.afficherRep = false;
     this.interval$ = interval(1000).subscribe((val) => {
