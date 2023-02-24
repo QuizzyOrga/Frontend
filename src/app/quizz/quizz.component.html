@@ -6,7 +6,8 @@
             </div>
             <div class=" d-flex justify-content-around py-3">
                 <div class="score">
-                    <h5>{{(correctAnswer / (inCorrectAnswer + correctAnswer)) * 100}} % de bonne réponse</h5>
+                    <h5>{{((correctAnswer / (inCorrectAnswer + correctAnswer)) * 100).toFixed()}} % de bonne réponse
+                    </h5>
                 </div>
                 <div class="question-remain">
                     <span style="font-style: italic;">Question {{currentQuestion+1}} sur {{questionList.length}}</span>
@@ -59,7 +60,8 @@
                     <p>Total des questions tentées : {{questionList.length}} </p>
                     <p>Total des réponses correctes : {{correctAnswer}} </p>
                     <p>Total des réponses erronées : {{inCorrectAnswer}} </p>
-                    <p>Votre Score : {{ (correctAnswer / (inCorrectAnswer + correctAnswer)) * 100}} % de bonne réponse
+                    <p>Votre Score : {{ ((correctAnswer / (inCorrectAnswer + correctAnswer)) * 100).toFixed()}} % de
+                        bonne réponse
                     </p>
 
 
@@ -111,6 +113,6 @@
         </ng-container>
 
         <ng-fireworks #fireworks="ngFireworks" [options]="options" class="fireworks"
-            *ngIf="(isQuizCompleted && points>10)"></ng-fireworks>
+            *ngIf="isQuizCompleted && ((correctAnswer / (inCorrectAnswer + correctAnswer)) * 100).toFixed()"></ng-fireworks>
     </div>
 </div>
